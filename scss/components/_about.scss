@@ -1,0 +1,42 @@
+#about {
+    margin: 7rem auto;
+    @include heading;
+    .about__grids {
+        .grid__block {
+            background-color: white;
+            position: relative;
+            padding: 4rem 3rem;
+            box-shadow: 0 3px 53px rgba(40, 40, 40, .05);
+            border-radius: 6px;
+            transition: all .4s;
+            a {
+                text-decoration: none;
+                i {
+                    font-size: 36px;
+                    color: $color-primary;
+                    transition: all .4s;
+                }
+                p {
+                    transition: all .4s;
+                }
+            }
+            &:hover {
+                background-color: $color-primary;
+                a {
+                    i {
+                        color: white;
+                    }
+                    p {
+                        color: white;
+                    }
+                }
+            }   
+            @include responsive(tab-port) {
+                margin-bottom: 2rem;
+            }
+            @include responsive(phone) {
+                padding: 3rem 2rem;
+            }
+        }
+    }
+}

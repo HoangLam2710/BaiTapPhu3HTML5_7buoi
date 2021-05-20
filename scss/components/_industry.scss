@@ -1,0 +1,37 @@
+#industry {
+    background-color: #f7f9fa;
+    padding: 3rem 0;
+    .industry__grid {
+        .industry__text {
+            @include heading;
+            ul {
+                list-style: none;
+                li {
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #1b1a1a;
+                    margin: 15px 0;
+                    font-weight: 600;
+                    i {
+                        color: $color-primary;
+                        margin-right: 12px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .industry__img {
+            @include responsive(tab-land) {
+                display: flex;
+                align-items: center;
+            }
+            @include responsive(tab-port) {
+                margin-top: 1rem;
+            }
+            img {
+                width: 100%;
+                border-radius: 6px;
+            }
+        }
+    }
+}

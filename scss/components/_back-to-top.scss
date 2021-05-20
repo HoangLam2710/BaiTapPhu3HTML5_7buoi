@@ -1,0 +1,29 @@
+.back-to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: $color-primary;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: white;
+  border-radius: 50%;
+  &:hover {
+    color: white;
+  }
+}
+
+.back-to-top__hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+}
+
+.isVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}

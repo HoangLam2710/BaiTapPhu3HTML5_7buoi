@@ -1,0 +1,66 @@
+@mixin responsive($breakpoint) {
+    @if ($breakpoint == phone) {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == tab-port) {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == tab-land) {
+        @media (min-width: 1024px) and (max-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin heading {
+    .sub-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #cacaca;
+        text-transform: uppercase;
+    }
+    .title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+    .content-area {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        @include responsive(tab-land) {
+            width: 80%;
+        }
+        @include responsive(tab-port) {
+            width: 100%;
+        }
+    }
+}
+
+@mixin btn-button($bg, $color) {
+    background: $bg;
+    border: 1px solid $bg;
+    border-radius: 6px;
+    transition: all 0.5s;
+    color: $color;
+    padding: 12px 36px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+        color: white;
+        border-color: #E44901;
+        background-color: #E44901;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(216, 139, 66, .5);
+    }
+}

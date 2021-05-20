@@ -1,0 +1,205 @@
+header {
+    .header-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+
+        .navbar-light-trans {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            transition: all 0.4s ease 0s;
+            height: 100px;
+        }
+
+        .navbar {
+            padding: 0;
+            .navbar-brand {
+                margin: 0;
+                padding: 0;
+                font-size: 32px;
+                font-weight: 700;
+                text-transform: capitalize;
+                color: #fff;
+                .sub-log {
+                    width: 40px;
+                    border-radius: 20px 0px 0px 0px;
+                    border-top: 8px solid #fff;
+                }
+            }
+
+            .navbar-toggler {
+                padding: 0;
+                border-color: rgba(0,0,0,0);
+                .navbar-toggler-icon {
+                    background-image: none;
+                    padding: 0;
+                    width: 34px;
+                    height: 34px;
+                    line-height: 34px;
+                    display: inline-block;
+                    background: $color-primary;
+                    border-radius: 4px;
+                    text-align: center;
+                    color: white;
+                }
+            }
+    
+            .navbar-collapse {
+                justify-content: center;
+                .navbar-nav {
+                    .nav-item {
+                        transition: all 0.5s ease;
+                        position: relative;
+                        padding: 0 10px;
+                        .nav-link {
+                            color: white;
+                            text-transform: capitalize;
+                            transition: all 0.5s ease;
+                            padding: 14px 0 10px;
+                            font-size: 17px;
+                            font-weight: 600;
+                            letter-spacing: .5px;
+                            transition: .5s all;
+                        }
+                        
+                    }
+                    .active {
+                        .nav-link {
+                            color: $color-primary;
+                        }
+                    }
+                    .top-quote {
+                        .btn-style {
+                            @include btn-button($color-primary, white);
+                        }
+                    }
+                }
+            }
+
+            .mobile-position {
+                nav {
+                    display: flex;
+                    justify-content: flex-end;
+                    .theme-switch-wrapper {
+                        display: flex;
+                        align-items: center;
+                        .theme-switch {
+                            display: inline-block;
+                            position: relative;
+                            width: 35px;
+                            margin: 0;
+                            input {
+                                display: none;
+                            }
+                            .mode-container {
+                                width: 24px;
+                                height: 24px;
+                                margin-left: 10px;
+                                .fa-moon {
+                                    display: block;
+                                    color: white;
+                                    box-sizing: border-box;
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                    position: relative;
+                                    transform: rotate(-25deg);
+                                    width: 20px;
+                                    height: 20px;
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                @include responsive(tab-port) {
+                    position: absolute;
+                    right: 50px;
+                    top: 12px;
+                }
+            }
+        }
+    
+        .navbar-expand-sm {
+            @media (min-width: 576px) and (max-width: 768px) {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .navbar-toggler {
+                @media (min-width: 576px) and (max-width: 768px) {
+                    display: block;
+                }
+            }
+            .navbar-collapse {
+                @media (min-width: 576px) and (max-width: 768px) {
+                    display: block !important;
+                    flex-basis: 100%;
+                }
+                @include responsive(tab-port) {
+                    position: absolute;
+                    top: 100%;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    padding: 15px;
+                }
+                @include responsive(phone) {
+                    background-color: rgba(0, 0, 0, 1);
+                }
+                .navbar-nav {
+                    @media (min-width: 576px) and (max-width: 768px) {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    @include responsive(phone) {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    
+        .collapse:not(.show) {
+            @media (min-width: 576px) and (max-width: 768px) {
+                display: none !important;
+            }
+        }
+    }
+
+    .isScrolling {
+        .navbar-light-trans {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            background-color: white;
+            height: 80px;
+            border-bottom: none;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .05);
+            .navbar {
+                .navbar-brand {
+                    color: #1b1a1a;
+                    .sub-log {
+                        border-color: $color-primary;
+                    }
+                }
+                .navbar-collapse {
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link {
+                                color: #1b1a1a;
+                                @include responsive(tab-port) {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .mobile-position {
+                    .fa-moon {
+                        color: #1b1a1a !important;
+                    }
+                }
+            }
+        }
+    }
+}

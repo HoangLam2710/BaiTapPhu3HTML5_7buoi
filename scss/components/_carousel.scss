@@ -1,0 +1,160 @@
+#carousel {
+    position: relative;
+    .carousel__slide {
+        position: relative;
+        .carousel__item {
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgba($color: #000000, $alpha: .5);
+            }
+            img {
+                width: 100%;
+                height: 100vh;
+                @include responsive(tab-land) {
+                    height: 60vh;
+                }
+                @include responsive(tab-port) {
+                    height: 60vh;
+                }
+                @include responsive(phone) {
+                    height: 70vh;
+                }
+            }
+            .carousel__content {
+                position: absolute;
+                top: 50%;
+                left: 8%;
+                transform: translateY(-50%);
+                max-width: 700px;
+                @include responsive(tab-port) {
+                    max-width: 630px;
+                    left: 10%;
+                }
+                @include responsive(phone) {
+                    max-width: 400px;
+                    left: 5%;
+                    right: 5%;
+                }
+                h1 {
+                    font-size: 85px;
+                    line-height: 95px;
+                    font-weight: 700;
+                    color: white;
+                    @include responsive(tab-port) {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+                    @include responsive(phone) {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+                }
+                p {
+                    font-weight: 600;
+                    font-size: 18px;
+                    margin-top: 2rem;
+                    color: white;
+                    @include responsive(phone) {
+                        font-size: 16px;
+                    }
+                }
+                .btn-style {
+                    @include btn-button($color-primary, white);
+                }
+
+                .btn-white {
+                    color: $color-primary;
+                    background: white;
+                    border-color: white;
+                    &:hover {
+                        color: $color-primary;
+                        background: white;
+                        border-color: white;
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            button {
+                position: absolute;
+                top: 47%;
+                color: white;
+                font-size: 26px;
+                margin: 0px;
+                width: 46px;
+                height: 46px;
+                line-height: 15px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.21);
+                display: inline-block;
+                cursor: pointer;
+                text-decoration: none;
+                outline: none;
+                box-shadow: none;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                    background: #fff;
+                    opacity: 1;
+                    color: #fe5a0e;
+                }
+            }
+            .owl-prev {
+                left: 2%;
+            }
+            .owl-next {
+                right: 2%;
+            }
+            @include responsive(phone) {
+                display: none;
+            }
+        }
+    }
+
+    .arrow-downhny {
+        position: absolute;
+        bottom: 15px;
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 1;
+        .position-absolute {
+            position: absolute !important;
+            @include responsive(phone) {
+                left: 46%;
+            }
+            .arrow-down-icon {
+                background: #fff;
+                display: inline-block;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                transition: 0.3s ease-in-out;
+                -webkit-animation: ripple 1s linear infinite;
+                animation: ripple 1s linear infinite;
+                i {
+                    color: #1b1a1a;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(254, 90, 14, .5), 0 0 0 10px rgba(254, 90, 14, .5), 0 0 0 20px rgba(254, 90, 14, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(254, 90, 14, .5), 0 0 0 20px rgba(254, 90, 14, .5), 0 0 0 30px rgba(50 ,100, 245, 0);
+    }
+}   
